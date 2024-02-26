@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function RootLayout(props: any) {
   return (
     <main className="container m-auto p-10 relative">
-      <div className={'hidden md:block w-40 h-40 fixed right-5'}>
-        <MainArt useBlink={false} />
+      <div className={'flex justify-end'}>
+        <MainArt useBlink={false} className="hidden lg:block w-40 h-40 absolute" />
       </div>
       {props.children}
     </main>

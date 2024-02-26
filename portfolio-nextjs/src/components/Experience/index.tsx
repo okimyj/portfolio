@@ -19,13 +19,13 @@ interface IExperienceProps {
 }
 export default function Experience({ data }: IExperienceProps) {
   return (
-    <div className="flex mb-5 border-b border-gray-400">
-      <div className="flex-row text-right w-52 break-keep companyWrapper">
+    <div className="flex flex-col md:flex-row mb-5 border-b border-gray-400">
+      <div className="text-left md:text-right mr-8 flex-row min-w-52 w-52 break-keep companyWrapper">
         <h1 className="text-4xl leading-normal">{data.companyName}</h1>
         <h2 className="text-sm text-gray-400">{data.period}</h2>
         <h2 className="text-sm text-gray-400">{data.position}</h2>
       </div>
-      <div className="projectWrapper">
+      <div className="projectWrapper max-w-xl">
         {data.projects.map((el, index) => (
           <Project key={index} data={el} />
         ))}

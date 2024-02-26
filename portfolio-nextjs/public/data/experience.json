@@ -18,7 +18,7 @@
       {
         "name": "컬러버스 빌더",
         "period": "2022.04.11 - 2022.12.31",
-        "description": "가상 세계를 만들 수 있는 Web Base 저작 도구<br/>조작을 위한 UI는 Web으로 구현하고, 조작 인풋을 WebRTC를 통해 Unity3D에 전달, 결과 데이터를 다시 Web으로 전달해 출력하는 방식",
+        "description": "가상 세계를 만들 수 있는 Web Base 저작 도구<br/>조작을 위한 UI는 Web으로 구현하고, 조작 인풋을 WebRTC를 통해 Unity3D에 전달,<br/>결과 데이터를 다시 Web으로 전달해 출력하는 방식",
         "whatDidIDo": [
           "Object들의 부모 자식간 계층 구조를 보여주고 편집 할 수 있는 Hierarchy구조 설계 및 구현",
           "Object의 위치, 크기, 회전등 속성 편집 Inspector 구조 설계 및 구현",
