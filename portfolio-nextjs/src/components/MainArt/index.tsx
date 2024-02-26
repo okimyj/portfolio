@@ -71,11 +71,6 @@ export default function MainArt({ className, useBlink = true }: IMainArtProps) {
   return (
     <div className={['text-center', className].join(' ')}>
       <MainArtSVG id={styles.mainArt} />
-      {pathName !== '/' ? (
-        <span className="text-xs cursor-pointer" onClick={() => route.push('/')}>
-          HOME
-        </span>
-      ) : null}
     </div>
   );
 }

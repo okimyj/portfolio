@@ -1,36 +1,67 @@
 'use client';
-import Project from './project';
+import { useLayoutEffect } from 'react';
+import ExperienceData from '../../../public/data/experience.json';
+import Company from '@/components/Experience/company';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './style.css';
+gsap.registerPlugin(ScrollTrigger);
+export default function Experience() {
+  useLayoutEffect(() => {
+    gsap.matchMedia().add('(min-width:768px)', () => {
+      const projectWrappers = gsap.utils.toArray<HTMLElement>('.projectWrapper');
+      gsap.utils.toArray<HTMLElement>('.companyWrapper').forEach((company, i) => {
+        ScrollTrigger.create({
+          trigger: company,
+          start: 'top top',
+          end: `${projectWrappers[i].offsetHeight - 100}px top`,
+          pin: true,
+          pinSpacing: false,
+        });
+      });
+    });
 
-type ExperienceData = {
-  companyName: string;
-  period: string;
-  position: string;
-  projects: ProjectData[];
-};
-export type ProjectData = {
-  name: string;
-  period: string;
-  description: string;
-  whatDidIDo: string[];
-  techStack: string[];
-};
-interface IExperienceProps {
-  className?: string;
-  data: ExperienceData;
-}
-export default function Experience({ className, data }: IExperienceProps) {
+    gsap.utils.toArray<HTMLElement>('.experience').forEach((element) => {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0 },
+        {
+          autoAlpha: 1,
+          duration: 2,
+          scrollTrigger: {
+            scrub: true,
+            trigger: element,
+            start: '15% 90%',
+            end: '15% 70%',
+          },
+        },
+      );
+    });
+    gsap.utils.toArray<HTMLElement>('.projectUnit').forEach((element) => {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0, y: 80 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            scrub: true,
+            trigger: element,
+            start: '15% 90%',
+            end: '15% 70%',
+          },
+        },
+      );
+    });
+  }, []);
   return (
-    <div className={['experience', 'flex flex-col md:flex-row mb-5 ', className].join(' ')}>
-      <div className="text-left md:text-right mr-8 flex-row min-w-52 w-52 break-keep companyWrapper">
-        <h1 className="text-4xl leading-normal">{data.companyName}</h1>
-        <h2 className="text-sm text-gray-400">{data.period}</h2>
-        <h2 className="text-sm text-gray-400">{data.position}</h2>
-      </div>
-      <div className="projectWrapper max-w-xl">
-        {data.projects.map((el, index) => (
-          <Project key={index} data={el} />
-        ))}
-      </div>
+    <div>
+      <h1 className="text-5xl mb-32 font-bold">Work Experience</h1>
+      {ExperienceData.map((el) => (
+        <Company key={el.companyName} data={el} />
+      ))}
+      <div className="h-32"></div>
     </div>
   );
 }

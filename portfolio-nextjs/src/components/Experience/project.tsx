@@ -1,6 +1,6 @@
 'use client';
 import DOMPurify from 'dompurify';
-import { ProjectData } from '.';
+import { ProjectData } from './company';
 import SkillIcon from './skillIcon';
 import { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ export default function Project({ data }: IProjectProps) {
     );
   };
   return (
-    <div className="mt-12 mb-5">
+    <div className="projectUnit mt-12 mb-5">
       <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <SubTitle text="Description" />
