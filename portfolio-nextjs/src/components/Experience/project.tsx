@@ -21,21 +21,24 @@ export default function Project({ data }: IProjectProps) {
     );
   };
   return (
-    <div className="projectUnit mt-12 mb-5">
+    <div className="projectUnit mt-12 mb-5 [&:not(:last-of-type)]:border-b">
       <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <SubTitle text="Description" />
       <div
+        className="leading-relaxed"
         dangerouslySetInnerHTML={{
           __html: description,
         }}
       />
       <SubTitle text="What did I do" />
       {data.whatDidIDo.map((el, index) => (
-        <p key={index}>{el}</p>
+        <p key={index} className="mb-1 leading-relaxed">
+          {el}
+        </p>
       ))}
       <SubTitle text="TechStack" />
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 mb-12">
         {data.techStack.map((el, index) => (
           <SkillIcon key={index} skillId={el} className="w-9 h-9" />
         ))}
