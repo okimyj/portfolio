@@ -13,7 +13,7 @@ export default function RootLayout(props: any) {
       >
         HOME
       </div>
-      <div className={'flex justify-end'}>
+      <div className={'hidden sm:flex justify-end'}>
         <MainArt useBlink={false} className="w-40 h-40 absolute" />
       </div>
       {props.children}
