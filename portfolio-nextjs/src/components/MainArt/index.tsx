@@ -15,7 +15,6 @@ interface IMainArtProps {
 export default function MainArt({ className, useBlink = true }: IMainArtProps) {
   const route = useRouter();
   const pathName = usePathname();
-  console.log('pathName : ', pathName);
   const [buttons, setButtons] = useState<ArtButton[]>([
     { id: 'left', path: '/profile' },
     { id: 'right', path: '/experience' },
@@ -73,7 +72,7 @@ export default function MainArt({ className, useBlink = true }: IMainArtProps) {
     <div className="text-center">
       <MainArtSVG id={styles.mainArt} className={[className].join(' ')} />
       {pathName !== '/' ? (
-        <span className="text-xs cursor-pointer" onClick={() => handleClickButton('/')}>
+        <span className="text-xs cursor-pointer" onClick={() => route.push('/')}>
           HOME
         </span>
       ) : null}

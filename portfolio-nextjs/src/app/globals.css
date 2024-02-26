@@ -4,8 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb : 255,255,255;
-  
+  --background-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,9 +13,16 @@
     --background-rgb: 34, 34, 34;
   }
 }
-
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
 body {
-  width:100vw;
+  width: 100vw;
   height: 100vh;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
