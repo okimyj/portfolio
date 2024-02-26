@@ -1,12 +1,17 @@
 'use client';
 import DOMPurify from 'dompurify';
-import { ProjectData } from './company';
+import { ProjectData } from '.';
 import SkillIcon from './skillIcon';
+import { useEffect, useState } from 'react';
 
 interface IProjectProps {
   data: ProjectData;
 }
 export default function Project({ data }: IProjectProps) {
+  const [description, setDescription] = useState<string>('');
+  useEffect(() => {
+    setDescription(DOMPurify.sanitize(data.description));
+  }, []);
   const SubTitle = ({ text }: { text: string }) => {
     return (
       <h2 className="text-2xl mt-5">
@@ -16,13 +21,13 @@ export default function Project({ data }: IProjectProps) {
     );
   };
   return (
-    <div className="p-5">
-      <h1 className="text-4xl">{data.name}</h1>
+    <div className="ml-5 mt-12">
+      <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <SubTitle text="Description" />
-      <p
+      <div
         dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize?.(data.description),
+          __html: description,
         }}
       />
       <SubTitle text="What did I do" />
