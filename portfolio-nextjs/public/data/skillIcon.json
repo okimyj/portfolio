@@ -1,0 +1,18 @@
+{
+  "cpp": { "printName": "C++", "icon": "icon_cpp.svg", "color": "#669AD3" },
+  "csharp": { "printName": "C#", "icon": "icon_csharp.svg", "color": "#9B4F97" },
+  "css": { "printName": "CSS", "icon": "icon_css.svg", "color": "#29A9DF" },
+  "html": { "printName": "HTML5", "icon": "icon_html.svg", "color": "#F16529" },
+  "html5": { "printName": "HTML5", "icon": "icon_html5.svg", "color": "#F16529" },
+  "js": { "printName": "JavaScript", "icon": "icon_javascript.svg", "color": "#F2BF22" },
+  "php": { "printName": "PHP", "icon": "icon_php.svg", "color": "#F2BF22" },
+  "react": { "printName": "React", "icon": "icon_react.svg", "color": "#00D8FF" },
+  "reactQuery": { "printName": "React Query", "icon": "icon_react_query.svg", "color": "#00D8FF" },
+  "ts": { "printName": "TypeScript", "icon": "icon_typescript.svg", "color": "#007ACC" },
+  "unity": { "printName": "Unity3D", "icon": "icon_unity.svg", "color": "#494848" },
+  "ugui": { "printName": "UGUI", "color": "#494848", "fontColor": "#fff" },
+  "ngui": { "printName": "NGUI", "color": "#494848", "fontColor": "#fff" },
+  "trid": { "printName": "Tri-d", "color": "#494848", "fontColor": "#fff" },
+  "lua": { "printName": "Lua Script", "color": "#E2D935", "fontColor": "#fff" },
+  "jquery": { "printName": "JQuery", "icon": "icon_jquery.svg", "color": "#fff" }
+}

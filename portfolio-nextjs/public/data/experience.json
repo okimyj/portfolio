@@ -1,0 +1,90 @@
+[
+  {
+    "companyName": "컬러버스",
+    "period": "2022.04 - 2023.12",
+    "position": "웹 프론트엔드 / 클라이언트",
+    "projects": [
+      {
+        "name": "마이룸",
+        "period": "2022.06.05 - 2023.12.31",
+        "description": "3D 아바타와 상태 액션, 메세지, 풍선 날리기(방명록) 등 본디를 벤치마킹한 SNS",
+        "whatDidIDo": [
+          "Atomic 디자인 패턴 및 storybook 도입으로 UI중복 작업 최소화, 디자이너와 개발자 간의 의사소통과 리소스 관리 효율성 향상",
+          "로그인, 회원가입, 설정 페이지 기능 개발 및 UI 퍼블리싱, API 연동",
+          "풍선(방명록) CRUD 기능 개발 및 인터렉션 애니메이션 작업, 퍼블리싱, API연동 "
+        ],
+        "techStack": ["react", "ts", "reactRouter", "reactQuery", "html5", "css", "jotai", "git"]
+      },
+      {
+        "name": "컬러버스 빌더",
+        "period": "2022.04.11 - 2022.12.31",
+        "description": "가상 세계를 만들 수 있는 Web Base 저작 도구<br/>조작을 위한 UI는 Web으로 구현하고, 조작 인풋을 WebRTC를 통해 Unity3D에 전달, 결과 데이터를 다시 Web으로 전달해 출력하는 방식",
+        "whatDidIDo": [
+          "Object들의 부모 자식간 계층 구조를 보여주고 편집 할 수 있는 Hierarchy구조 설계 및 구현",
+          "Object의 위치, 크기, 회전등 속성 편집 Inspector 구조 설계 및 구현",
+          "Hierarchy와 Inspector를 기본으로 ItemCreator 설계 및 구현",
+          "사용자가 원하는 Model로 Item을 제작할 수 있도록 GLB, GLTF 포맷의 파일을 컬러버스 데이터 포맷에 맞게 변환하여 Load/Save 하는 Model Loader 개발"
+        ],
+        "techStack": ["unity", "c#", "react", "ts", "html5", "css", "jotai", "git"]
+      }
+    ]
+  },
+  {
+    "companyName": "플린트",
+    "period": "2020.12 - 2022.03",
+    "position": "클라이언트",
+    "projects": [
+      {
+        "name": "별이 되어라2",
+        "period": "2020.12.04 - 2022.03.24",
+        "description": "벨트 스크롤 방식의 액션 MORPG",
+        "whatDidIDo": [
+          "테이블 무결성 검사 툴 개발로 단순 테이블 데이터 오류 시 발생할 수 있는 디버깅 시간 90%이상 축소",
+          "공통 UI Component Customizing",
+          "튜토리얼 시스템, 미션, 길드 시스템 등 아웃게임 콘텐츠 개발"
+        ],
+        "techStack": ["unity", "c#", "perforce"]
+      }
+    ]
+  },
+  {
+    "companyName": "바오밥넷",
+    "period": "2014.04 - 2020.11",
+    "position": "클라이언트",
+    "projects": [
+      {
+        "name": "RWBY : Amity Arena",
+        "period": "2015.12 - 2020.11",
+        "description": "수집형 카드 RTS",
+        "whatDidIDo": [
+          "UI Framework 구축 및 전반적인 아웃 게임 콘텐츠 개발 총괄",
+          "Photon Server를 이용해 실시간 채팅이 가능한 광장 모드 구현",
+          "패치 용이성을 위해 LuaScript로 주요 콘텐츠 개발이 가능하도록 기반 작업",
+          "Android / iOS 글로벌 런칭"
+        ],
+        "techStack": ["unity", "c#", "ugui", "lua", "git", "subversion"]
+      },
+      {
+        "name": "도와줘 잭",
+        "period": "2014.04 - 2020.11",
+        "description": "스테이지 방식 RPG",
+        "whatDidIDo": ["아바타 생성, 로비, 강화, 제작 등 콘텐츠 UI 개발 및 API 연동", "인게임 스킬 시스템 개발", "Android / iOS 글로벌 런칭"],
+        "techStack": ["unity", "c#", "ngui", "lua", "subversion"]
+      }
+    ]
+  },
+  {
+    "companyName": "트라이디 커뮤니케이션",
+    "period": "2012.04 - 2014.03",
+    "position": "클라이언트",
+    "projects": [
+      {
+        "name": "퍼피레드",
+        "period": "2012.04 - 2014.03",
+        "description": "기존 서비스 유지보수 및 3D 광고 제작",
+        "whatDidIDo": ["프로젝트 유지보수", "정부 과제, 3D광고 제작", "미니게임 프로토타이핑"],
+        "techStack": ["c++", "lua", "subversion"]
+      }
+    ]
+  }
+]
