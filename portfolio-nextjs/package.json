@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.17",
     "dompurify": "^3.0.9",
+    "gsap": "^3.12.5",
     "next": "14.1.0",
     "postcss": "^8.4.35",
     "react": "^18",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
+    "@types/gsap": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

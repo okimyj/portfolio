@@ -8,7 +8,7 @@ interface IProjectProps {
   data: ProjectData;
 }
 export default function Project({ data }: IProjectProps) {
-  const [description, setDescription] = useState<string>('');
+  const [description, setDescription] = useState<string>(data.description);
   useEffect(() => {
     setDescription(DOMPurify.sanitize(data.description));
   }, []);
@@ -21,7 +21,7 @@ export default function Project({ data }: IProjectProps) {
     );
   };
   return (
-    <div className="ml-5 mt-12">
+    <div className="ml-8 mt-12 mb-5">
       <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <SubTitle text="Description" />

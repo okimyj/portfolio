@@ -1,7 +1,24 @@
+'use client';
+import { useEffect, useLayoutEffect } from 'react';
 import ExperienceData from '../../../../public/data/experience.json';
 import Experience from '@/components/Experience';
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 export default function ExperiencePage() {
+  useLayoutEffect(() => {
+    const projectWrappers = gsap.utils.toArray<HTMLElement>('.projectWrapper');
+    gsap.utils.toArray<HTMLElement>('.companyWrapper').forEach((company, i) => {
+      ScrollTrigger.create({
+        trigger: company,
+        start: 'top top',
+        end: `${projectWrappers[i].offsetHeight - 100}px top`,
+        pin: true,
+        pinSpacing: false,
+        markers: false,
+      });
+    });
+  }, []);
   return (
     <div>
       <h1 className="text-5xl mb-32">Work Experience</h1>
