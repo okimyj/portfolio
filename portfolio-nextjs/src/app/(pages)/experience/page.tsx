@@ -1,5 +1,4 @@
 'use client';
-
 import { useLayoutEffect } from 'react';
 import ExperienceData from '../../../../public/data/experience.json';
 import Experience from '@/components/Experience';
@@ -18,9 +17,27 @@ export default function ExperiencePage() {
           end: `${projectWrappers[i].offsetHeight - 100}px top`,
           pin: true,
           pinSpacing: false,
-          markers: false,
         });
       });
+    });
+
+    gsap.utils.toArray<HTMLElement>('.experience').forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0, y: 80 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 2,
+          scrollTrigger: {
+            scrub: true,
+            trigger: element,
+            start: '10% 90%',
+            end: '10% 70%',
+            // markers: true,
+          },
+        },
+      );
     });
   }, []);
   return (

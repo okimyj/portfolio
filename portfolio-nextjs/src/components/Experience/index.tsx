@@ -1,7 +1,7 @@
 'use client';
 import Project from './project';
 
-type ExpericeData = {
+type ExperienceData = {
   companyName: string;
   period: string;
   position: string;
@@ -15,11 +15,12 @@ export type ProjectData = {
   techStack: string[];
 };
 interface IExperienceProps {
-  data: ExpericeData;
+  className?: string;
+  data: ExperienceData;
 }
-export default function Experience({ data }: IExperienceProps) {
+export default function Experience({ className, data }: IExperienceProps) {
   return (
-    <div className="flex flex-col md:flex-row mb-5 border-b border-gray-400">
+    <div className={['experience', 'flex flex-col md:flex-row mb-5 ', className].join(' ')}>
       <div className="text-left md:text-right mr-8 flex-row min-w-52 w-52 break-keep companyWrapper">
         <h1 className="text-4xl leading-normal">{data.companyName}</h1>
         <h2 className="text-sm text-gray-400">{data.period}</h2>
