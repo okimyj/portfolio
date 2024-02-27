@@ -7,7 +7,7 @@ import MotionProfileImage from './motionProfileImage';
 
 export default function Profile() {
   const ContactAddr = ({ children }: { children: React.ReactNode[] }) => {
-    return <li className="flex flex-row [&>svg]:w-5 [&>svg]:mr-2">{children}</li>;
+    return <li className="flex flex-row [&>svg]:w-5 [&>svg]:mr-2 justify-center md:justify-start">{children}</li>;
   };
   return (
     <section className="md:flex min-h-svh items-center ml-8">
@@ -17,8 +17,8 @@ export default function Profile() {
       <div className="hidden md:block relative">
         <MotionProfileImage />
       </div>
-      <div className="flex-row justify-center md:block">
-        <h1 className="text-7xl font-bold">김 야진</h1>
+      <div className="flex-row justify-center text-center md:block md:text-left">
+        <p className="text-7xl font-bold">김 야진</p>
         <ul className="mt-3 space-y-2">
           <ContactAddr>
             <MailSVG /> okimyj@gmail.com

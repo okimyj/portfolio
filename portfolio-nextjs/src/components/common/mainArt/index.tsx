@@ -11,9 +11,10 @@ type ArtButton = {
   title: string;
 };
 interface IMainArtProps {
+  artClassName?: string;
   className?: string;
 }
-export default function MainArt({ className }: IMainArtProps) {
+export default function MainArt({ className, artClassName }: IMainArtProps) {
   const route = useRouter();
   const pathName = usePathname();
   const isHome = pathName === '/';
@@ -27,7 +28,7 @@ export default function MainArt({ className }: IMainArtProps) {
   const PageTitle = useCallback(() => {
     if (isHome) return null;
     const button = buttons.find((button) => button.path === pathName);
-    return button ? <h1 className="page-title">{button.title}</h1> : null;
+    return button ? <h1 className="page-title break-keep">{button.title}</h1> : null;
   }, [pathName]);
 
   const handleClickButton = (path: string) => (e: Event) => {
@@ -90,13 +91,15 @@ export default function MainArt({ className }: IMainArtProps) {
     };
   }, [buttons, pathName]);
   return (
-    <div className={['text-left', className].join(' ')}>
-      <MainArtSVG id={styles.mainArt} />
-      {isHome ? null : (
-        <Link href={'/'} className="mb-2 cursor-pointer hover:text-primary text-base opacity-70">
-          HOME
-        </Link>
-      )}
+    <div className={['text-left flex md:flex-col', className].join(' ')}>
+      <div className="text-center md:text-left">
+        <MainArtSVG id={styles.mainArt} className={artClassName} />
+        {isHome ? null : (
+          <Link href={'/'} className="mb-2 cursor-pointer hover:text-primary text-base opacity-70">
+            HOME
+          </Link>
+        )}
+      </div>
       <PageTitle />
     </div>
   );

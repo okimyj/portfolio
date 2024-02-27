@@ -2,10 +2,10 @@ import MainArt from '@/components/common/mainArt';
 import Link from 'next/link';
 export default function RootLayout(props: any) {
   return (
-    <main className="container flex m-auto">
-      <div className="w-72 min-w-72">
-        <div className="fixed h-svh flex items-center">
-          <MainArt className="w-52 h-52 -translate-y-1/2" />
+    <main className="container md:flex m-auto">
+      <div className="md:w-72 md:min-w-72">
+        <div className="md:w-72 md:min-w-72 md:fixed md:h-svh md:flex items-center">
+          <MainArt artClassName="w-52 h-52" className="md:-translate-y-1/2" />
         </div>
       </div>
       <div>{props.children}</div>
