@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import MainArtSVG from '../../../../public/icons/main_art.svg';
 import styles from './styles.module.scss';
 import { usePathname, useRouter } from 'next/navigation';
@@ -10,9 +10,8 @@ type ArtButton = {
 };
 interface IMainArtProps {
   className?: string;
-  useBlink?: boolean;
 }
-export default function MainArt({ className, useBlink = true }: IMainArtProps) {
+export default function MainArt({ className }: IMainArtProps) {
   const route = useRouter();
   const pathName = usePathname();
   const [buttons, setButtons] = useState<ArtButton[]>([
@@ -24,20 +23,20 @@ export default function MainArt({ className, useBlink = true }: IMainArtProps) {
   const handleClickButton = (path: string) => (e: Event) => {
     route.push(path);
   };
-  const handleMouseOver = (e: Event) => {
+  const handleMouseOver = useCallback(() => {
     buttons.forEach((el) => {
       if (el.element && el.element.classList.contains(styles.blink)) {
         el.element.classList.remove(styles.blink);
       }
     });
-  };
-  const handleMouseOut = (e: Event) => {
+  }, [buttons, pathName]);
+  const handleMouseOut = useCallback(() => {
     buttons.forEach((el) => {
       if (el.element && !el.element.classList.contains(styles.blink)) {
-        el.element.classList.add(styles.blink);
+        if (pathName === '/' || pathName !== el.path) el.element.classList.add(styles.blink);
       }
     });
-  };
+  }, [buttons, pathName]);
 
   useEffect(() => {
     const mainArt = document.getElementById(styles.mainArt);
@@ -49,11 +48,12 @@ export default function MainArt({ className, useBlink = true }: IMainArtProps) {
       buttons.forEach((el) => {
         if (pathItem.id.includes(el.id)) {
           el.element = pathItem;
-          if (useBlink) {
+          if (pathName === '/' || pathName !== el.path) {
             pathItem.classList.toggle(styles.blink);
-            pathItem.addEventListener('mouseover', handleMouseOver);
-            pathItem.addEventListener('mouseout', handleMouseOut);
           }
+          pathItem.addEventListener('mouseover', handleMouseOver);
+          pathItem.addEventListener('mouseout', handleMouseOut);
+
           pathItem.addEventListener('click', handleClickButton(el.path));
         }
       });
@@ -63,8 +63,13 @@ export default function MainArt({ className, useBlink = true }: IMainArtProps) {
   useEffect(() => {
     buttons.forEach((el) => {
       if (el.element) {
-        if (el.path === pathName) el.element.classList.add(styles.isDefaultOn);
-        else el.element.classList.remove(styles.isDefaultOn);
+        if (el.path === pathName) {
+          el.element.classList.add(styles.isDefaultOn);
+          el.element.classList.remove(styles.blink);
+        } else {
+          el.element.classList.add(styles.blink);
+          el.element.classList.remove(styles.isDefaultOn);
+        }
       }
     });
   }, [buttons, pathName]);

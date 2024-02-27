@@ -50,4 +50,7 @@ body {
     filter: brightness(0) invert(80%) sepia(22%) saturate(6001%) hue-rotate(105deg) contrast(109%);
     opacity: 0.4;
   }
+  .main-art-drop-shadow {
+    filter: drop-shadow(0 0 0.75rem black);
+  }
 }
