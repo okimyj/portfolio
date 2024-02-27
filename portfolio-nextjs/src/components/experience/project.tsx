@@ -19,14 +19,14 @@ export default function Project({ data }: IProjectProps) {
       <p className="text-sm text-gray-400">({data.period})</p>
       <h2 className="section-sub-title">Description</h2>
       <div
-        className="leading-relaxed"
+        className="leading-loose"
         dangerouslySetInnerHTML={{
           __html: description,
         }}
       />
       <h2 className="section-sub-title">What did I do</h2>
       {data.whatDidIDo.map((el, index) => (
-        <p key={index} className="mb-1 leading-relaxed">
+        <p key={index} className="mb-1 leading-loose">
           {el}
         </p>
       ))}

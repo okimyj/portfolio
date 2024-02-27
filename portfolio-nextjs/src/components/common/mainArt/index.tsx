@@ -93,7 +93,7 @@ export default function MainArt({ className, artClassName }: IMainArtProps) {
     };
   }, [buttons, pathName]);
   return (
-    <div className={['text-left flex md:flex-col min-h-96', className].join(' ')}>
+    <div className={['text-left flex items-center justify-center md:flex-col md:justify-start md:items-start  md:min-h-96', className].join(' ')}>
       <nav className="text-center md:text-left">
         <MainArtSVG id={styles.mainArt} className={artClassName} />
         {isHome ? null : (

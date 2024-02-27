@@ -15,8 +15,9 @@
 } */
 * {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-use-select: none;
@@ -27,7 +28,6 @@ body {
   height: 100vh;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -44,7 +44,7 @@ body {
   }
 
   .section-sub-title {
-    @apply text-2xl mt-5 after-primary-dot;
+    @apply text-2xl mt-5 mb-2 after-primary-dot;
   }
   .profile-image-shadow {
     -webkit-filter: brightness(0) invert(80%) sepia(22%) saturate(6001%) hue-rotate(105deg) contrast(109%);

@@ -18,7 +18,7 @@ export default function Profile() {
         <MotionProfileImage />
       </div>
       <div className="flex-row justify-center text-center md:block md:text-left">
-        <p className="text-7xl font-bold">김 야진</p>
+        <p className="text-7xl font-bold text-nowrap">김 야진</p>
         <ul className="mt-3 space-y-2">
           <ContactAddr>
             <MailSVG /> okimyj@gmail.com
