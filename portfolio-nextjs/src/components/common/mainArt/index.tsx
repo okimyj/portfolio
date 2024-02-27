@@ -3,10 +3,12 @@ import { useCallback, useEffect, useState } from 'react';
 import MainArtSVG from '../../../../public/icons/main_art.svg';
 import styles from './styles.module.scss';
 import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 type ArtButton = {
   id: string;
   element?: SVGPathElement;
   path: string;
+  title: string;
 };
 interface IMainArtProps {
   className?: string;
@@ -14,11 +16,19 @@ interface IMainArtProps {
 export default function MainArt({ className }: IMainArtProps) {
   const route = useRouter();
   const pathName = usePathname();
+  const isHome = pathName === '/';
+
   const [buttons, setButtons] = useState<ArtButton[]>([
-    { id: 'left', path: '/profile' },
-    { id: 'right', path: '/experience' },
-    { id: 'center', path: '/etc' },
+    { id: 'left', path: '/profile', title: 'Profile' },
+    { id: 'right', path: '/experience', title: 'Work Experience' },
+    { id: 'center', path: '/etc', title: 'Etc' },
   ]);
+
+  const PageTitle = useCallback(() => {
+    if (isHome) return null;
+    const button = buttons.find((button) => button.path === pathName);
+    return button ? <h1 className="page-title">{button.title}</h1> : null;
+  }, [pathName]);
 
   const handleClickButton = (path: string) => (e: Event) => {
     route.push(path);
@@ -51,9 +61,6 @@ export default function MainArt({ className }: IMainArtProps) {
           if (pathName === '/' || pathName !== el.path) {
             pathItem.classList.toggle(styles.blink);
           }
-          pathItem.addEventListener('mouseover', handleMouseOver);
-          pathItem.addEventListener('mouseout', handleMouseOut);
-
           pathItem.addEventListener('click', handleClickButton(el.path));
         }
       });
@@ -63,6 +70,9 @@ export default function MainArt({ className }: IMainArtProps) {
   useEffect(() => {
     buttons.forEach((el) => {
       if (el.element) {
+        el.element.addEventListener('mouseover', handleMouseOver);
+        el.element.addEventListener('mouseout', handleMouseOut);
+
         if (el.path === pathName) {
           el.element.classList.add(styles.isDefaultOn);
           el.element.classList.remove(styles.blink);
@@ -72,10 +82,22 @@ export default function MainArt({ className }: IMainArtProps) {
         }
       }
     });
+    return () => {
+      buttons.forEach((button) => {
+        button.element?.removeEventListener('mouseover', handleMouseOver);
+        button.element?.removeEventListener('mouseout', handleMouseOut);
+      });
+    };
   }, [buttons, pathName]);
   return (
-    <div className={['text-center', className].join(' ')}>
+    <div className={['text-left', className].join(' ')}>
       <MainArtSVG id={styles.mainArt} />
+      {isHome ? null : (
+        <Link href={'/'} className="mb-2 cursor-pointer hover:text-primary text-base opacity-70">
+          HOME
+        </Link>
+      )}
+      <PageTitle />
     </div>
   );
 }

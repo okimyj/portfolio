@@ -10,7 +10,7 @@ export default function Profile() {
     return <li className="flex flex-row [&>svg]:w-5 [&>svg]:mr-2">{children}</li>;
   };
   return (
-    <section className="md:flex">
+    <section className="md:flex min-h-svh items-center ml-8">
       <div className="md:hidden flex justify-center">
         <Image className="w-96 " src={ProfileImageCircle} alt="" />
       </div>

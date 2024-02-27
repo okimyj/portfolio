@@ -56,7 +56,7 @@ export default function Experience() {
     });
   }, []);
   return (
-    <div>
+    <div className="mt-10">
       {ExperienceData.map((el) => (
         <Company key={el.companyName} data={el} />
       ))}

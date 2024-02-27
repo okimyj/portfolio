@@ -27,6 +27,7 @@ body {
   height: 100vh;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -36,10 +37,10 @@ body {
 }
 @layer components {
   .after-primary-dot {
-    @apply after:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
+    @apply before:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
   }
   .page-title {
-    @apply text-5xl mb-32 font-bold after-primary-dot;
+    @apply inline-flex items-end text-5xl mb-32 font-bold after-primary-dot;
   }
 
   .section-sub-title {

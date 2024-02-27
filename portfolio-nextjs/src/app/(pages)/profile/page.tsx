@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 export default function ProfilePage() {
   return (
     <div>
-      <h1 className="page-title">Profile</h1>
       <Suspense>
         <Profile />
       </Suspense>

@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <div>
-      <h1 className="page-title">Work Experience</h1>
       <Suspense fallback={<div></div>}>
         <Experience />
       </Suspense>
