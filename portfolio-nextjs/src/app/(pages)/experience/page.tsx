@@ -1,3 +1,4 @@
+import ScrollIndicator from '@/components/common/scrollIndicator';
 import Experience from '@/components/experience';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -11,6 +12,7 @@ export default function ExperiencePage() {
       <Suspense fallback={<div></div>}>
         <Experience />
       </Suspense>
+      <ScrollIndicator />
     </div>
   );
 }

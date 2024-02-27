@@ -4,6 +4,7 @@ import MainArtSVG from '../../../../public/icons/main_art.svg';
 import styles from './styles.module.scss';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 type ArtButton = {
   id: string;
   element?: SVGPathElement;
@@ -17,6 +18,7 @@ interface IMainArtProps {
 export default function MainArt({ className, artClassName }: IMainArtProps) {
   const route = useRouter();
   const pathName = usePathname();
+
   const isHome = pathName === '/';
 
   const [buttons, setButtons] = useState<ArtButton[]>([
@@ -91,15 +93,15 @@ export default function MainArt({ className, artClassName }: IMainArtProps) {
     };
   }, [buttons, pathName]);
   return (
-    <div className={['text-left flex md:flex-col', className].join(' ')}>
-      <div className="text-center md:text-left">
+    <div className={['text-left flex md:flex-col min-h-96', className].join(' ')}>
+      <nav className="text-center md:text-left">
         <MainArtSVG id={styles.mainArt} className={artClassName} />
         {isHome ? null : (
-          <Link href={'/'} className="mb-2 cursor-pointer hover:text-primary text-base opacity-70">
+          <Link href={'/'} className="mb-2 cursor-pointer hover:text-primary text-base font-semibold opacity-70">
             HOME
           </Link>
         )}
-      </div>
+      </nav>
       <PageTitle />
     </div>
   );
