@@ -1,7 +1,7 @@
-import MainArt from "@/components/MainArt";
+import MainArt from '@/components/mainArt';
 export default function Home() {
   return (
-    <main className={"w-full h-full flex items-center justify-center"}>
+    <main className={'w-full h-full flex items-center justify-center'}>
       <div className="w-96 h-96">
         <MainArt />
       </div>

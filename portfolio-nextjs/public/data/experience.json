@@ -43,7 +43,7 @@
           "공통 UI Component Customizing",
           "튜토리얼 시스템, 미션, 길드 시스템 등 아웃게임 콘텐츠 개발"
         ],
-        "techStack": ["unity", "c#", "perforce"]
+        "techStack": ["unity", "c#", "ugui", "perforce"]
       }
     ]
   },
@@ -83,7 +83,7 @@
         "period": "2012.04 - 2014.03",
         "description": "기존 서비스 유지보수 및 3D 광고 제작",
         "whatDidIDo": ["프로젝트 유지보수", "정부 과제, 3D광고 제작", "미니게임 프로토타이핑"],
-        "techStack": ["c++", "lua", "subversion"]
+        "techStack": ["cpp", "lua", "subversion"]
       }
     ]
   }

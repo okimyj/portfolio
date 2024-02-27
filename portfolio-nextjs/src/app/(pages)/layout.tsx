@@ -1,5 +1,5 @@
 'use client';
-import MainArt from '@/components/MainArt';
+import MainArt from '@/components/mainArt';
 import { useRouter } from 'next/navigation';
 export default function RootLayout(props: any) {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import Experience from '@/components/Experience';
+import Experience from '@/components/experience';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 
@@ -7,8 +7,11 @@ export const metadata: Metadata = {
 };
 export default function ExperiencePage() {
   return (
-    <Suspense fallback={<div></div>}>
-      <Experience />
-    </Suspense>
+    <div>
+      <h1 className="page-title">Work Experience</h1>
+      <Suspense fallback={<div></div>}>
+        <Experience />
+      </Suspense>
+    </div>
   );
 }

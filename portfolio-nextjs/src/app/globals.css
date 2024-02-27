@@ -34,3 +34,20 @@ body {
     text-wrap: balance;
   }
 }
+@layer components {
+  .after-primary-dot {
+    @apply after:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
+  }
+  .page-title {
+    @apply text-5xl mb-32 font-bold after-primary-dot;
+  }
+
+  .section-sub-title {
+    @apply text-2xl mt-5 after-primary-dot;
+  }
+  .profile-image-shadow {
+    -webkit-filter: brightness(0) invert(80%) sepia(22%) saturate(6001%) hue-rotate(105deg) contrast(109%);
+    filter: brightness(0) invert(80%) sepia(22%) saturate(6001%) hue-rotate(105deg) contrast(109%);
+    opacity: 0.4;
+  }
+}

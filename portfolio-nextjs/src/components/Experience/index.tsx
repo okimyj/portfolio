@@ -1,7 +1,7 @@
 'use client';
 import { useLayoutEffect } from 'react';
 import ExperienceData from '../../../public/data/experience.json';
-import Company from '@/components/Experience/company';
+import Company from '@/components/experience/company';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.css';
@@ -57,11 +57,10 @@ export default function Experience() {
   }, []);
   return (
     <div>
-      <h1 className="text-5xl mb-32 font-bold">Work Experience</h1>
       {ExperienceData.map((el) => (
         <Company key={el.companyName} data={el} />
       ))}
-      <div className="h-32"></div>
+      <footer className="h-32"></footer>
     </div>
   );
 }

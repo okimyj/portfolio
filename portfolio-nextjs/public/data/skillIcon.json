@@ -1,6 +1,6 @@
 {
   "cpp": { "printName": "C++", "icon": "icon_cpp.svg", "color": "#669AD3" },
-  "csharp": { "printName": "C#", "icon": "icon_csharp.svg", "color": "#9B4F97" },
+  "c#": { "printName": "C#", "icon": "icon_csharp.svg", "color": "#9B4F97" },
   "css": { "printName": "CSS", "icon": "icon_css.svg", "color": "#29A9DF" },
   "html": { "printName": "HTML5", "icon": "icon_html.svg", "color": "#F16529" },
   "html5": { "printName": "HTML5", "icon": "icon_html5.svg", "color": "#F16529" },
@@ -14,5 +14,8 @@
   "ngui": { "printName": "NGUI", "color": "#494848", "fontColor": "#fff" },
   "trid": { "printName": "Tri-d", "color": "#494848", "fontColor": "#fff" },
   "lua": { "printName": "Lua Script", "color": "#E2D935", "fontColor": "#fff" },
-  "jquery": { "printName": "JQuery", "icon": "icon_jquery.svg", "color": "#fff" }
+  "jquery": { "printName": "JQuery", "icon": "icon_jquery.svg", "color": "#fff" },
+  "git": { "printName": "Git", "icon": "icon_git.svg", "color": "#fff" },
+  "subversion": { "printName": "SVN", "color": "#fff", "fontColor": "#000" },
+  "perforce": { "printName": "Perforce", "color": "#fff", "fontColor": "#000" }
 }
