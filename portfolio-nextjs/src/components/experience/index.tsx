@@ -29,7 +29,7 @@ export default function Experience() {
           autoAlpha: 1,
           duration: 2,
           scrollTrigger: {
-            scrub: true,
+            scrub: 2,
             trigger: element,
             start: '15% 90%',
             end: '15% 70%',
@@ -44,9 +44,9 @@ export default function Experience() {
         {
           autoAlpha: 1,
           y: 0,
-          duration: 1,
+          duration: 2,
           scrollTrigger: {
-            scrub: true,
+            scrub: 2,
             trigger: element,
             start: '15% 90%',
             end: '15% 70%',
