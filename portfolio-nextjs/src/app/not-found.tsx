@@ -1,4 +1,4 @@
-import MainArt from '@/components/mainArt';
+import MainArt from '@/components/common/mainArt';
 import { useRouter } from 'next/navigation';
 export default function NotFound() {
   return (

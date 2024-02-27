@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import MainArtSVG from '../../../public/icons/main_art.svg';
+import MainArtSVG from '../../../../public/icons/main_art.svg';
 import styles from './styles.module.scss';
 import { usePathname, useRouter } from 'next/navigation';
 type ArtButton = {

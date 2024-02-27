@@ -1,4 +1,4 @@
-import MainArt from '@/components/mainArt';
+import MainArt from '@/components/common/mainArt';
 export default function Home() {
   return (
     <main className={'w-full h-full flex items-center justify-center'}>
