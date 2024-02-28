@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify';
 import { ProjectData } from './company';
 import SkillIcon from './skillIcon';
 import { useEffect, useState } from 'react';
-import useScrollUp from '@/hooks/useScrollUp';
+import useScrollUp from '@/hooks/ui/useScrollUp';
 
 interface IProjectProps {
   data: ProjectData;

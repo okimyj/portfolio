@@ -1,5 +1,5 @@
 'use client';
-import useScrollAlpha from '@/hooks/useScrollAlpha';
+import useScrollAlpha from '@/hooks/ui/useScrollAlpha';
 import Project from './project';
 export type ProjectData = {
   name: string;

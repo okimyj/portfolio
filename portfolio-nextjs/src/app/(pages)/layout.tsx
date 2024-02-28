@@ -7,7 +7,6 @@ export default function RootLayout(props: any) {
           <MainArt artClassName="w-32 h-32 sm:w-52 sm:h-52" />
         </div>
       </div>
-
       <div className="h-auto [&>div]:h-full">{props.children}</div>
     </main>
   );

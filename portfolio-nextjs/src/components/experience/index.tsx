@@ -2,7 +2,7 @@
 import ExperienceData from '../../../public/data/experience.json';
 import Company from '@/components/experience/company';
 import './style.css';
-import useScrollPin from '@/hooks/useScrollPin';
+import useScrollPin from '@/hooks/ui/useScrollPin';
 
 export default function Experience() {
   useScrollPin('(min-width:768px)');

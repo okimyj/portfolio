@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import useScrollUp from '@/hooks/useScrollUp';
+import useScrollUp from '@/hooks/ui/useScrollUp';
 
 export default function ProfileContents() {
   const scrollUpClass = useScrollUp();

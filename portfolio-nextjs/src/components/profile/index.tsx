@@ -18,9 +18,9 @@ export default function Profile() {
     );
   };
   return (
-    <section className=" ml-10 min-h-full flex flex-col justify-center">
+    <section className="md:ml-10 min-h-full flex flex-col justify-center">
       {/* 768 이하 인 경우 circle 프로필 세로로 보여줌 */}
-      <div className="md:flex items-center">
+      <div className="md:flex items-center borer">
         <div className="md:hidden flex justify-center">
           <Image className="w-96 " src={ProfileImageCircle} alt="" />
         </div>
