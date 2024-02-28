@@ -3,6 +3,7 @@ import DOMPurify from 'dompurify';
 import { ProjectData } from './company';
 import SkillIcon from './skillIcon';
 import { useEffect, useState } from 'react';
+import useScrollAnimatingSections from '@/hooks/useScrollAnimatingSections';
 
 interface IProjectProps {
   data: ProjectData;
@@ -14,7 +15,7 @@ export default function Project({ data }: IProjectProps) {
   }, []);
 
   return (
-    <div className="projectUnit mt-12 mb-5 [&:not(:last-of-type)]:border-b">
+    <div className="scrollUp projectUnit mt-12 mb-5 [&:not(:last-of-type)]:border-b">
       <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <h2 className="section-sub-title">Description</h2>
