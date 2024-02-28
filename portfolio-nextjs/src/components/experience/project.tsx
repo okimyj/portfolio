@@ -3,7 +3,6 @@ import DOMPurify from 'dompurify';
 import { ProjectData } from './company';
 import SkillIcon from './skillIcon';
 import { useEffect, useState } from 'react';
-import useScrollAnimatingSections from '@/hooks/useScrollAnimatingSections';
 
 interface IProjectProps {
   data: ProjectData;
