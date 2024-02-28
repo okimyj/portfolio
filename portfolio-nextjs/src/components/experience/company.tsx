@@ -1,19 +1,8 @@
 'use client';
 import useScrollAlpha from '@/hooks/ui/useScrollAlpha';
 import Project from './project';
-export type ProjectData = {
-  name: string;
-  period: string;
-  description: string;
-  whatDidIDo: string[];
-  techStack: string[];
-};
-type ExperienceData = {
-  companyName: string;
-  period: string;
-  position: string;
-  projects: ProjectData[];
-};
+import { ExperienceData } from '@/types/customTypes';
+
 interface IExperienceProps {
   className?: string;
   data: ExperienceData;

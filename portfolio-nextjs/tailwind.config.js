@@ -16,6 +16,7 @@ module.exports = {
         woBasePadding: '100svh - 1.25rem * 2',
       },
       colors: {
+        innerBackground: '#888',
         background: '#222',
         primary: '#32ffb9',
       },
