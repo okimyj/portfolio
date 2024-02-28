@@ -3,9 +3,11 @@ import Button from '@/components/common/ui/button';
 import Input from '@/components/common/ui/input';
 import useGuestBook from '@/hooks/firebase/guestBook/useGuestBook';
 import { GuestBookFormData } from '@/types/customTypes';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import ReactQuill from 'react-quill';
+
+const ReactQuill = dynamic(async () => await import('react-quill'), { ssr: false, loading: () => <div>Loading...</div> });
 import 'react-quill/dist/quill.snow.css';
 export default function GuestBookWriteForm() {
   const { addGuestBook } = useGuestBook();
