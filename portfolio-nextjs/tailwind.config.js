@@ -7,6 +7,7 @@ module.exports = {
       fontSize: {
         pageTitle: ['3rem', { lineHeight: '1' }],
         profile: ['2.5rem', { lineHeight: '1.25' }],
+        profileContents: ['1rem', { lineHeight: '1.7' }],
       },
       padding: {
         screenBase: '1.25rem',

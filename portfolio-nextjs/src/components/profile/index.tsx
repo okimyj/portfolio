@@ -11,7 +11,7 @@ export default function Profile() {
     return (
       <li className="flex flex-row [&>svg]:w-5 [&>svg]:mr-2 justify-center md:justify-start">
         {svg}
-        <a href={href ?? title} target="_blank">
+        <a className="hover:text-primary" href={href ?? title} target="_blank">
           {title}
         </a>
       </li>
@@ -29,7 +29,7 @@ export default function Profile() {
         </div>
         <div className="flex-row justify-center text-center md:block md:text-left">
           <p className="text-7xl font-bold text-nowrap">김 야진</p>
-          <ul className="mt-3 space-y-2">
+          <ul className="ml-2 mt-3 space-y-2">
             <ContactAddr svg={<MailSVG />} title="okimyj@gmail.com" href="mailto:okimyj@gmail.com" />
             <ContactAddr svg={<GitHubSVG />} title="https://github.com/okimyj" />
             <ContactAddr svg={<VelogSVG />} title="https://velog.io/@okimyj" />

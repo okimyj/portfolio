@@ -40,7 +40,7 @@ body {
 }
 @layer components {
   .after-primary-dot {
-    @apply before:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
+    @apply after:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
   }
   .page-title {
     @apply inline items-end text-pageTitle font-bold after-primary-dot;
