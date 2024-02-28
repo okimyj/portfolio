@@ -43,7 +43,7 @@ body {
     @apply before:content-[''] after:inline-block after:bg-primary border-0 after:w-1 after:h-1 after:ml-2 after:rounded;
   }
   .page-title {
-    @apply inline items-end text-5xl font-bold after-primary-dot;
+    @apply inline items-end text-pageTitle font-bold after-primary-dot;
   }
 
   .section-sub-title {
