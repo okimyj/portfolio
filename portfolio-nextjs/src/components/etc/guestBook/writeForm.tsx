@@ -32,7 +32,7 @@ export default function GuestBookWriteForm() {
         <Input title="Name " type="text" register={register('writer')} />
         <Input title="PassWord " type="password" register={register('password')} />
       </div>
-      <ReactQuill onChange={onChangeContents}></ReactQuill>
+      <ReactQuill onChange={onChangeContents} value={contents}></ReactQuill>
       <div className="w-full flex justify-end">
         <Button className="mt-2">Add</Button>
       </div>
