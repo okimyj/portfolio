@@ -2,6 +2,7 @@ import { DocumentData } from 'firebase/firestore';
 export interface ICustomDocumentData extends DocumentData {
   id: string;
 }
+
 export interface GuestBookData extends ICustomDocumentData {
   writer?: string;
   password?: string;
@@ -10,7 +11,6 @@ export interface GuestBookData extends ICustomDocumentData {
   updatedAt?: string;
   deletedAt?: string;
 }
-export type GuestBookFormData = Omit<GuestBookData, 'id'>;
 
 export type ProjectData = {
   name: string;

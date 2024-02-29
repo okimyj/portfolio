@@ -1,6 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { getApp, initializeApp } from 'firebase/app';
-import { QueryCompositeFilterConstraint, QueryOrderByConstraint, QuerySnapshot, getFirestore, onSnapshot, query } from 'firebase/firestore';
+import {
+  QueryFieldFilterConstraint,
+  QueryOrderByConstraint,
+  QuerySnapshot,
+  deleteDoc,
+  doc,
+  getFirestore,
+  onSnapshot,
+  query,
+  updateDoc,
+} from 'firebase/firestore';
 import firebase from 'firebase/compat/app';
 import { getDocs, collection, WithFieldValue, DocumentData, addDoc } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -24,8 +34,14 @@ const getCollection = (storePath: string) => collection(firebaseDB, storePath);
 export const firestoreAddDoc = async (storePath: string, data: WithFieldValue<DocumentData>) => {
   return await addDoc(getCollection(storePath), data);
 };
+export const firestoreDeleteDoc = async (storePath: string, id: string) => {
+  return await deleteDoc(doc(firebaseDB, storePath, id));
+};
+export const firestoreUpdateDoc = async (storePath: string, id: string, data: WithFieldValue<DocumentData>) => {
+  return await updateDoc(doc(firebaseDB, storePath, id), data);
+};
 
-export const firestoreGetDocs = async ({
+export const firestoreGetSnapshot = ({
   storePath,
   orderBy,
   compositeFilter,
@@ -33,7 +49,7 @@ export const firestoreGetDocs = async ({
 }: {
   storePath: string;
   orderBy?: QueryOrderByConstraint;
-  compositeFilter?: QueryCompositeFilterConstraint;
+  compositeFilter?: QueryFieldFilterConstraint;
   callback?: (snapshot: QuerySnapshot<DocumentData, DocumentData>) => void;
 }) => {
   const collection = getCollection(storePath);
@@ -41,7 +57,7 @@ export const firestoreGetDocs = async ({
     const q =
       compositeFilter && orderBy ? query(collection, compositeFilter, orderBy) : compositeFilter ? query(collection, compositeFilter) : orderBy ? query(collection, orderBy) : query(collection);
 
-    await onSnapshot(q, (querySnapshot) => {
+    return onSnapshot(q, (querySnapshot) => {
       callback?.(querySnapshot);
     });
   } catch (error) {

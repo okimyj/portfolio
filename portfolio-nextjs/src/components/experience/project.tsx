@@ -17,11 +17,11 @@ export default function Project({ data }: IProjectProps) {
       <h1 className="text-3xl">{data.name}</h1>
       <p className="text-sm text-gray-400">({data.period})</p>
       <h2 className="section-sub-title">Description</h2>
-      <SanitizeText className="leading-loose" text={data.description} />
+      <SanitizeText className="leading-relaxed" text={data.description} />
 
       <h2 className="section-sub-title">What did I do</h2>
       {data.whatDidIDo.map((el, index) => (
-        <p key={index} className="mb-1 leading-loose">
+        <p key={index} className="mb-1 leading-relaxed">
           {el}
         </p>
       ))}
